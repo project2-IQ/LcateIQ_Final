@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LocateIQ | تسجيل الدخول</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="login.css">
+  <script src="theme.js"></script>
+</head>
+
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4"></span>
+    <span class="blob b5 orange"></span>
+    <span class="blob b6 orange"></span>
+    <span class="blob b7 orange"></span>
+    <span class="blob b8 orange"></span>
+  </div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-text">Locate<span class="brand-iq">IQ</span></span>
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" opacity=".7"/>
+            <path d="M14.8 9.2 9.2 14.8l2.2-5.6 3.4 0Z" />
+            <path d="M9.2 14.8 14.8 9.2l-2.2 5.6-3.4 0Z" opacity=".7"/>
+          </svg>
+        </span>
+      </a>
+
+      <nav class="nav-center" aria-label="روابط">
+        <a class="nav-link" href="index.html" id="navHome">الرئيسية</a>
+      </nav>
+
+      <div class="actions">
+        <button class="lang-btn" id="langBtn" type="button">
+          <span id="langText">English</span>
+          <span class="mini-ic" aria-hidden="true">🌐</span>
+        </button>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Theme">
+          <span id="themeText" style="display:none;">Dark</span>
+          <span class="theme-moon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Section -->
+  <main class="login-hero">
+    <div class="container login-inner">
+
+      <!-- Title -->
+      <div class="login-head">
+        <h1 class="login-title" id="title">
+          <span id="welcomeText">مرحباً بك في</span> 
+          <span class="brand-glow">LocateIQ</span>
+        </h1>
+        <p class="login-subtitle" id="subtitle">حيث تبدأ الاستثمارات الذكية</p>
+      </div>
+
+      <!-- Login Card -->
+      <form class="login-card" id="loginForm" autocomplete="on">
+        
+        <label id="emailLabel" for="email">البريد الإلكتروني</label>
+        <input id="email" type="email" placeholder="أدخل بريدك الإلكتروني" required>
+
+        <label id="passLabel" for="password">كلمة المرور</label>
+        <input id="password" type="password" placeholder="أدخل كلمة المرور" required>
+
+        <button class="login-btn" type="submit" id="loginBtn">تسجيل الدخول ←</button>
+
+        <!-- ✅ رابط "نسيت كلمة المرور" -->
+        <div class="forgot-password">
+          <a href="#" id="forgotPasswordLink" class="forgot-link" data-i18n="forgot_password">نسيت كلمة المرور؟</a>
+        </div>
+
+        <p class="login-foot">
+          <span id="noAccount">ليس لديك حساب؟</span>
+          <a href="signup.html" id="signupLink">إنشاء حساب</a>
+        </p>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- ✅ Modal (نافذة منبثقة) -->
+  <div id="forgotModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 id="modalTitle">استعادة كلمة المرور</h3>
+      <p id="modalDesc">أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين</p>
+      <input type="email" id="resetEmail" placeholder="البريد الإلكتروني" class="modal-input">
+      <button id="sendResetBtn" class="modal-btn">إرسال رابط الاستعادة</button>
+      <p id="modalMessage" class="modal-message"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="login-footer">
+    <div class="container">
+      <p>©️ 2026 <span class="brand-glow">LocateIQ</span> - <span id="footerRights">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+</html>

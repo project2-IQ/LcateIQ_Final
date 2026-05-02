@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="settings_title">LocateIQ | إعدادات النظام</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4 orange"></span>
+    <span class="blob b5 orange"></span>
+    <span class="blob b6"></span>
+    <span class="blob b7"></span>
+    <span class="blob b8"></span>
+  </div>
+
+  <!-- Admin Topbar -->
+  <header class="topbar admin-topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="LocateIQ Home">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" opacity=".7"/>
+            <path d="M14.8 9.2 9.2 14.8l2.2-5.6 3.4 0Z" />
+            <path d="M9.2 14.8 14.8 9.2l-2.2 5.6-3.4 0Z" opacity=".7"/>
+          </svg>
+        </span>
+        <span class="brand-text">LocateIQ</span>
+      </a>
+
+      <nav class="nav-center" aria-label="روابط">
+        <a class="nav-link" href="index.html" data-i18n="nav_home">الرئيسية</a>
+      </nav>
+
+      <div class="actions">
+        <button class="lang-btn" id="langBtn" type="button">
+          <span id="langText">English</span>
+          <span class="mini-ic" aria-hidden="true">🌐</span>
+        </button>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Theme">
+          <span id="themeText" style="display:none;">Dark</span>
+          <span class="theme-moon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="admin-layout">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <div class="user-info">
+          <div class="user-avatar">👤</div>
+          <div class="user-details">
+            <div class="user-name">Admin User</div>
+            <div class="user-role" data-i18n="admin_role">مدير النظام</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="admin.html" class="nav-link" data-i18n="home">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">الرئيسية</span>
+        </a>
+        
+        <a href="admin-users.html" class="nav-link" data-i18n="users">
+          <span class="nav-icon">👥</span>
+          <span class="nav-text">المستخدمين</span>
+        </a>
+        
+        <a href="admin-settings.html" class="nav-link active" data-i18n="settings">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-text">الإعدادات</span>
+        </a>
+
+        <a href="dashboard.html" class="nav-link" data-i18n="user_dashboard">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">واجهة المستخدم</span>
+        </a>
+
+        <a href="#" class="nav-link" id="themeCustomizer" data-i18n="customize_theme">
+          <span class="nav-icon">🎨</span>
+          <span class="nav-text">تخصيص المظهر</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="logout-btn" id="logoutBtn">
+          <span class="nav-icon">🚪</span>
+          <span class="nav-text" data-i18n="logout">تسجيل الخروج</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+      <div class="container">
+
+        <!-- Page Header -->
+        <header class="page-head">
+          <h1 class="page-title" data-i18n="settings_title">إعدادات النظام</h1>
+          <p class="page-sub" data-i18n="settings_sub">التحكم في إعدادات المنصة</p>
+        </header>
+
+        <!-- Settings Grid -->
+        <div class="settings-grid">
+
+          <!-- الإعدادات العامة -->
+          <section class="admin-section">
+            <h2>
+              <span class="section-icon">⚙️</span>
+              <span data-i18n="general_settings">الإعدادات العامة</span>
+            </h2>
+            <div class="settings-form">
+              <div class="setting-item">
+                <label data-i18n="site_name">اسم الموقع</label>
+                <input type="text" value="LocateIQ" class="setting-input">
+              </div>
+              <div class="setting-item">
+                <label data-i18n="admin_email">بريد الأدمن</label>
+                <input type="email" value="admin@locateiq.com" class="setting-input">
+              </div>
+              <div class="setting-item">
+                <label data-i18n="maintenance_mode">وضع الصيانة</label>
+                <select class="setting-select">
+                  <option value="off" selected data-i18n="off">معطل</option>
+                  <option value="on" data-i18n="on">مفعل</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- إعدادات الذكاء الاصطناعي -->
+          <section class="admin-section">
+            <h2>
+              <span class="section-icon">🧠</span>
+              <span data-i18n="ai_settings">إعدادات الذكاء الاصطناعي</span>
+            </h2>
+            <div class="settings-form">
+              <div class="setting-item">
+                <label data-i18n="ml_model">نموذج الذكاء</label>
+                <div class="static-value">K-Means</div>
+              </div>
+              <div class="setting-item">
+                <label data-i18n="clusters">عدد المجموعات</label>
+                <div class="static-value">30</div>
+              </div>
+              <div class="setting-item">
+                <label data-i18n="accuracy">دقة النموذج</label>
+                <input type="range" min="0" max="100" value="87" class="setting-range" id="accuracyRange">
+                <span class="range-value" id="accuracyValue">87%</span>
+              </div>
+              <p class="setting-hint" data-i18n="accuracy_hint">تغيير الدقة يعيد تدريب النموذج</p>
+            </div>
+          </section>
+
+          <!-- إعدادات الخريطة -->
+          <section class="admin-section">
+            <h2>
+              <span class="section-icon">🗺️</span>
+              <span data-i18n="map_settings">إعدادات الخريطة</span>
+            </h2>
+            <div class="settings-form">
+              <div class="setting-item">
+                <label data-i18n="map_style">نمط الخريطة</label>
+                <select class="setting-select" id="mapStyle">
+                  <option value="streets" selected data-i18n="streets">شوارع</option>
+                  <option value="satellite" data-i18n="satellite">قمر صناعي</option>
+                  <option value="terrain" data-i18n="terrain">تضاريس</option>
+                </select>
+              </div>
+              <div class="setting-item">
+                <label data-i18n="default_zoom">التكبير الافتراضي</label>
+                <input type="number" value="12" min="5" max="18" class="setting-input" id="defaultZoom">
+              </div>
+              <div class="setting-item">
+                <label data-i18n="show_clusters">عرض المجموعات</label>
+                <input type="checkbox" checked class="setting-checkbox" id="showClusters">
+              </div>
+              <div class="setting-item">
+                <label data-i18n="cluster_colors">ألوان المجموعات</label>
+                <div class="color-preview">
+                  <span class="color-dot green"></span> <span data-i18n="high_suitable">مناسب جداً (1-10)</span>
+                  <span class="color-dot yellow"></span> <span data-i18n="medium_suitable">متوسط (11-20)</span>
+                  <span class="color-dot red"></span> <span data-i18n="low_suitable">غير مناسب (21-30)</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Save Button -->
+        <div class="settings-actions">
+          <button class="save-settings-btn" id="saveSettings">
+            <span>💾</span>
+            <span data-i18n="save_settings">حفظ الإعدادات</span>
+          </button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="admin-footer">
+    <div class="container">
+      <p>© 2026 <span class="brand-glow">LocateIQ</span> - <span data-i18n="footer_rights">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
+
+  <script src="admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // تحديث قيمة الدقة
+      const accuracyRange = document.getElementById('accuracyRange');
+      const accuracyValue = document.getElementById('accuracyValue');
+      
+      if (accuracyRange) {
+        accuracyRange.addEventListener('input', () => {
+          accuracyValue.textContent = accuracyRange.value + '%';
+        });
+      }
+
+      // حفظ الإعدادات
+      document.getElementById('saveSettings')?.addEventListener('click', () => {
+        const accuracy = document.getElementById('accuracyRange').value;
+        alert(`تم حفظ الإعدادات\nدقة النموذج: ${accuracy}% (محاكاة)`);
+        
+        // هنا راح نرسل للباك ايند
+        // fetch('/api/settings', { method: 'POST', body: JSON.stringify({ accuracy }) })
+      });
+    });
+  </script>
+</body>
+</html>

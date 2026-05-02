@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n-title="home_title">LocateIQ | الصفحة الرئيسية</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="home.css">
+  <script src="theme.js"></script>
+</head>
+
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4 orange"></span>
+    <span class="blob b5 orange"></span>
+    <span class="blob b6"></span>
+    <span class="blob b7"></span>
+    <span class="blob b8"></span>
+    <span class="blob b9"></span>
+    <span class="blob b10 orange"></span>
+    <span class="blob b11"></span>
+    <span class="blob b12 orange"></span>
+  </div>
+
+  <!-- Top Navbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+
+      <a class="brand" href="#">
+        <span class="brand-text">LocateIQ</span>
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" opacity=".7"/>
+            <path d="M14.8 9.2 9.2 14.8l2.2-5.6 3.4 0Z" />
+            <path d="M9.2 14.8 14.8 9.2l-2.2 5.6-3.4 0Z" opacity=".7"/>
+          </svg>
+        </span>
+      </a>
+
+      <nav class="nav-center" aria-label="روابط">
+        <a class="nav-link active" href="#" data-i18n="nav_home">الرئيسية</a>
+      </nav>
+
+      <div class="actions">
+        <button class="lang-btn" id="langBtn" type="button">
+          <span id="langText">English</span>
+          <span class="mini-ic" aria-hidden="true">🌐</span>
+        </button>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Theme">
+          <span id="themeText" style="display:none;">Dark</span>
+          <span class="theme-moon">🌙</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero">
+    <div class="container hero-inner">
+
+      <div class="hero-icon" aria-hidden="true">
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring r2"></div>
+        <div class="pin">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z"/>
+            <path d="M12 12.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" opacity=".7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="map-wrap" aria-hidden="true">
+        <img class="asir-outline" src="asir-outline.png" alt="">
+      </div>
+
+      <h1 class="title">
+        استثمر بذكاء مع <span class="brand-glow">LocateIQ</span>
+      </h1>
+
+      <p class="subtitle">
+        اكتشف أفضل المواقع الاستثمارية باستخدام الذكاء الاصطناعي والتحليل المكاني.
+      </p>
+
+      <div class="cta">
+        <a class="btn btn-secondary" href="#about">
+          <span data-i18n="btn_about">عن LocateIQ</span>
+          <span class="btn-ic" aria-hidden="true">ⓘ</span>
+        </a>
+
+        <a class="btn btn-primary" href="login.html">
+          <span data-i18n="btn_login">تسجيل الدخول</span>
+          <span class="btn-ic" aria-hidden="true">➜</span>
+        </a>
+
+        <a class="btn btn-ghost" href="how.html">
+          <span data-i18n="btn_how">كيفية الاستخدام</span>
+        </a>
+      </div>
+
+      <p class="tagline" data-i18n="hero_tagline">قرارات استثمارية مدعومة بالبيانات والذكاء.</p>
+
+    </div>
+  </main>
+<!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="container about-wrap">
+
+      <header class="about-head">
+        <span class="about-kicker" data-i18n="about_kicker">منصة توصية مواقع استثمارية</span>
+
+        <h2 class="about-title">
+          <span data-i18n="about_title_prefix">عن</span>
+          <span class="brand-glow">LocateIQ</span>
+        </h2>
+
+        <p class="about-sub" data-i18n="about_sub">
+          LocateIQ يساعد المستثمرين على اختيار الموقع الأنسب عبر تحليل مكاني وذكاء اصطناعي مبني على البيانات.
+        </p>
+      </header>
+
+      <!-- Highlights -->
+      <div class="about-grid">
+        <article class="about-card">
+          <div class="about-card-ic" aria-hidden="true">📍</div>
+          <h3 class="about-card-title" data-i18n="about_c1_title">تركيز على عسير</h3>
+          <p class="about-card-text" data-i18n="about_c1_text">
+            توصيات مخصّصة لمدن مثل أبها وخميس مشيط مع مؤشرات مكانية محلية.
+          </p>
+        </article>
+
+        <article class="about-card">
+          <div class="about-card-ic" aria-hidden="true">🧠</div>
+          <h3 class="about-card-title" data-i18n="about_c2_title">تحليل ذكي</h3>
+          <p class="about-card-text" data-i18n="about_c2_text">
+            مقارنة الكثافة السكانية والمنافسين والخدمات لإخراج تقييم واضح ومقنع.
+          </p>
+        </article>
+
+        <article class="about-card">
+          <div class="about-card-ic" aria-hidden="true">🗺️</div>
+          <h3 class="about-card-title" data-i18n="about_c3_title">قرار مدعوم بالخريطة</h3>
+          <p class="about-card-text" data-i18n="about_c3_text">
+            عرض النتائج على الخريطة مع مواقع مقترحة قابلة للمقارنة بسرعة.
+          </p>
+        </article>
+      </div>
+
+      <!-- Mission + Stats -->
+      <div class="about-panel">
+        <div class="about-panel-main">
+          <h3 class="about-panel-title" data-i18n="about_mission_title">مهمتنا</h3>
+          <p class="about-panel-text" data-i18n="about_mission_text">
+            تبسيط اتخاذ القرار الاستثماري عبر منصة تجمع البيانات والتحليل المكاني والذكاء الاصطناعي في تجربة واحدة أنيقة.
+          </p>
+
+          <h3 class="about-panel-title" data-i18n="about_vision_title">رؤيتنا</h3>
+          <p class="about-panel-text" data-i18n="about_vision_text">
+            أن يكون LocateIQ المرجع الأول لتحديد أفضل المواقع الاستثمارية في منطقة عسير — ثم التوسع لباقي مناطق المملكة.
+          </p>
+        </div>
+
+        <div class="about-panel-stats" aria-label="Stats">
+          <div class="stat">
+            <div class="stat-num">AI</div>
+            <div class="stat-label" data-i18n="stat1">تحليل وتوصيات</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">GIS</div>
+            <div class="stat-label" data-i18n="stat2">مؤشرات مكانية</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Asir</div>
+            <div class="stat-label" data-i18n="stat3">تركيز محلي</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER (جديد) -->
+  <footer class="about-footer">
+    <div class="container">
+      <p>© 2026 <span class="brand-glow">LocateIQ</span> - <span data-i18n="footer_rights">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
