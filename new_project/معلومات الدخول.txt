@@ -1,0 +1,12 @@
+
+ahmad@gmail.com
+ahmadA123!@#
+
+
+admin:
+admin@locateiq.com
+Admin@123
+
+
+link:
+Open http://localhost/LocateIQ/new_project/tools/import_liq_dataset.php once (then remove or protect that file).

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n-title="dash_title">LocateIQ | لوحة التحكم</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="dashboard.css">
+
+  <!-- Leaflet (الخريطة) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="theme.js"></script>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4 orange"></span>
+    <span class="blob b5 orange"></span>
+    <span class="blob b6"></span>
+    <span class="blob b7"></span>
+    <span class="blob b8"></span>
+  </div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+
+      <a class="brand" href="index.html">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" opacity=".7" fill="#ff7a18"/>
+            <path d="M14.8 9.2 9.2 14.8l2.2-5.6 3.4 0Z" fill="#ff7a18"/>
+            <path d="M9.2 14.8 14.8 9.2l-2.2 5.6-3.4 0Z" opacity=".7" fill="#ff7a18"/>
+          </svg>
+        </span>
+        <span class="brand-text" style="color: #ff7a18 !important;">Locate<span class="brand-glow">IQ</span></span>
+      </a>
+
+      <nav class="nav-center">
+        <a class="nav-link" href="index.html">الرئيسية</a>
+      </nav>
+
+      <div class="actions">
+        <button class="lang-btn" id="langBtn" type="button">
+          <span id="langText">English</span>
+          <span class="mini-ic">🌐</span>
+        </button>
+        <button class="theme-btn" id="themeBtn" type="button">
+          <span class="theme-moon">🌙</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Menu Button -->
+  <button class="menu-fab" id="menuFab">☰</button>
+
+  <!-- Side Menu -->
+  <aside class="side" id="sideMenu">
+    <div class="side-head">
+      <span class="side-title">القائمة</span>
+      <button class="side-close" id="menuClose">✕</button>
+    </div>
+
+    <a class="side-item" href="profile.html">👤 الملف الشخصي</a>
+    <a class="side-item active" href="dashboard.html">💬 الشات</a>
+    <a class="side-item" href="past-results.html">🕘 النتائج السابقة</a>
+
+    <button class="side-item danger" id="logoutBtn">🚪 تسجيل الخروج</button>
+  </aside>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Page -->
+  <main class="page">
+    <div class="container">
+
+      <header class="page-head">
+        <h1 class="page-title">محادثة تحليل الاستثمار</h1>
+        <p class="page-sub">
+          اكتب متطلبات مشروعك، وستظهر النتائج المقترحة على الخريطة.
+        </p>
+      </header>
+
+      <section class="grid">
+
+        <!-- Chat -->
+        <article class="card chat">
+
+          <div class="chat-description">
+            اكتب مميزات مشروعك وستظهر النتائج على الخريطة
+          </div>
+
+          <div class="chat-body" id="chatBody">
+            <div class="msg bot">
+              <div class="msg-ic">🤖</div>
+              <div class="msg-bubble">
+                أهلًا! اكتب مشروعك في عسير مثل: "مقهى في أبها".
+              </div>
+            </div>
+          </div>
+
+          <form class="chat-input" id="chatForm">
+            <div class="input-wrapper">
+              <button class="attach-btn" type="button">+</button>
+              <input id="chatText" type="text" placeholder="صف مشروعك..." required/>
+            </div>
+            <button class="send-btn" type="submit">➤</button>
+          </form>
+
+        </article>
+
+        <!-- Map -->
+        <article class="card map">
+          <div class="card-head">
+            <h2 class="card-title">خريطة الاستثمار - عسير</h2>
+          </div>
+
+          <!-- ✨ هنا التعديل -->
+          <div class="map-box" id="mapBox">
+            <div id="asirMap"></div>
+            <div class="map-overlay" id="mapOverlay">
+              الخريطة ستظهر بعد إدخال وصف المشروع
+            </div>
+          </div>
+
+          <!-- Legend -->
+          <div class="legend">
+
+            <div class="lg">
+              <span class="dot green"></span>
+              <div>
+                <div class="lg-title">مناسب جدًا</div>
+                <div class="lg-text">فرصة نجاح عالية</div>
+              </div>
+            </div>
+
+            <div class="lg">
+              <span class="dot yellow"></span>
+              <div>
+                <div class="lg-title">مناسب متوسط</div>
+                <div class="lg-text">مخاطرة متوسطة</div>
+              </div>
+            </div>
+
+            <div class="lg">
+              <span class="dot red"></span>
+              <div>
+                <div class="lg-title">غير موصى به</div>
+                <div class="lg-text">فرصة ضعيفة</div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="dashboard-footer">
+    <div class="container">
+      <p>© 2026 LocateIQ</p>
+    </div>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
